@@ -30,7 +30,7 @@ console.log("Updated array : ",nums2);
 const fruits = ["Apple","Mango","Orange","Kiwi"];
 fruits.shift();
 console.log("Updated array : ",fruits);
-//Output : Updated array :  ["Apple","Mango","Orange","Kiwi"]
+//Output : Updated array :  ["Mango","Orange","Kiwi"]
 
 
 //Task 6--> unshift method(adds a number at beginning)
