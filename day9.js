@@ -21,7 +21,6 @@ body.append(div1);
 
 //Task 4--> create a new li element and add it to an existing ul list.
 let list1=document.getElementById("list1");
-list1.classList
 let li=document.createElement("li");
 li.innerText="The Guide";
 list1.append(li);
