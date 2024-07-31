@@ -19,3 +19,5 @@ Day 8 : ES6+ features
 Day 9 : DOM Manipulation
 
 Day 10 : Event Handling
+
+Day 11 : Promises and Async/Await
