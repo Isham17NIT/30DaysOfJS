@@ -106,6 +106,7 @@ function validateInput(str)
     }
         
 }
+//   uncomment below lines to take input and validate the string
 let str=prompt("Enter a string : ");
 console.log(str);
 validateInput(str);
@@ -115,22 +116,100 @@ validateInput(str);
 //Task 6 :
 // Create a promise that randomly resolves or rejects. Use .catch() to handle 
 // the rejection and log an appropriate message to the console
-
+//solution
+const randomFunction = ()=>{
+    return new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        let r = Math.floor(Math.random() * 10)
+        if(r<5)
+            resolve("executed successfully");
+        else{
+            reject(new Error("something went wrong"));
+        }
+    },2000);
+    })
+}
+randomFunction().then((msg)=>{
+    console.log(msg);
+}).catch((err)=>{
+    console.log(err.message);
+});
 
 //Task 7 : 
 // Use try-catch within an async function to handle errors from a 
 // promise that randomly resolves or rejects and log the error message
+(async function (){
+    try{
+    let promise = await randomFunction();
+    console.log(promise);
+    }
+    catch(err){
+        console.log(err);
+    }
+})();
 
 // Activity 5 Graceful Error Handling in Fetch
 
 //Task 8 : 
 // Use the fetch API to request data from an invalid URL and handle the error 
 // using .catch(). Log an appropriate message to the console
+//solution:
+const URL = 'https://zoo-animals-api.p.rapidapi.com/animals/rand/10/randomData';
+const option = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '50920d862amsh183ad305193748dp1d2eb2jsnb6d30ebed125',
+		'x-rapidapi-host': 'zoo-animals-api.p.rapidapi.com'
+	}
+};
+
+const funPromise = ()=>{
+    return new Promise((resolve,reject)=>{
+        fetch(URL,option).then((response)=>{
+            if(response.ok)
+                resolve(response.text());
+            else{
+                reject(`something went wrong   Error : ${response.status}`);
+            }
+        })
+        .catch((err)=>{
+            reject(err);
+        })
+    })
+}
+funPromise().then((msg)=>{
+    console.log(msg);
+})
+.catch((err)=>{
+    console.log(err);
+})
+
+//output : something went wrong   Error : 404
 
 //Task 9 :
 // Use the fetch API to request data from an invalid URL within an async function and handle 
 // the error using .catch(). Log an appropriate message to the console
+//solution:
+const url = 'https://zoo-animals-api.p.rapidapi.com/animals/rand/10';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': '50920d862amsh183ad305193748dp1d2eb2jsnb6d30ebed125',
+		'x-rapidapi-host': 'zoo-animals-api.p.rapidapi.com'
+	}
+};
 
+(async function (){
+try {
+	const response = await fetch(url,options);
+	const result = await response.text();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+})()
+
+//output : 404 (Not Found)
 
 
 
