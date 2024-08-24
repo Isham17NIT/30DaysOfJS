@@ -27,3 +27,21 @@ Day 12 : Error Handling
 Day 13 : Modules
 
 Day 14 : Classes
+
+Day 15 : Closures
+
+Day 16 : Recursion
+
+Day 17 : LinkedList, Stack, Queue and Binary Trees
+
+Day 18 : Sorting, Searching, String and Array
+
+Day 19 : Regular Expressions
+
+Day 20 : Local Storage
+
+Day 21 : LeetCode Problems
+
+Day 22 : LeetCode Medium
+
+Day 23 : LeetCode Hard
